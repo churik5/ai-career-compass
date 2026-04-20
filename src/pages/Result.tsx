@@ -6,7 +6,6 @@ import { Eyebrow } from '../components/Eyebrow';
 import { Orb } from '../components/Orb';
 import { PageShell } from '../components/PageShell';
 import { Stagger } from '../components/Stagger';
-import { Icon } from '../lib/icon';
 import { useQuizState } from '../lib/quizState';
 import { useI18n, useLocale } from '../lib/i18n';
 import { cn } from '../lib/cn';
@@ -87,7 +86,7 @@ export default function Result() {
               )}
               aria-hidden="true"
             >
-              <Icon name={top.role.iconName} size={44} strokeWidth={1.4} />
+              <top.role.icon size={44} />
             </motion.div>
 
             {/* Role name */}
@@ -142,7 +141,7 @@ export default function Result() {
                       ACCENT_TEXT[r.role.accent],
                     )}
                   >
-                    <Icon name={r.role.iconName} size={22} strokeWidth={1.5} />
+                    <r.role.icon size={22} />
                   </span>
                   <div className="flex-1 min-w-0">
                     <span className="block font-display text-lg sm:text-xl text-bone-50 truncate">

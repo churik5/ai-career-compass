@@ -206,7 +206,7 @@ export default function Dashboard() {
                       ACCENT_TEXT[topRole.accent],
                     )}
                   >
-                    <Icon name={topRole.iconName} size={38} strokeWidth={1.4} />
+                    <topRole.icon size={38} />
                   </span>
                   <Badge variant={topRole.accent === 'lime' ? 'lime' : topRole.accent}>
                     {t('dashboard.matchLabel', { percent: top.percent })}

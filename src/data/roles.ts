@@ -6,6 +6,21 @@
  * fills them later. The shape is stable; IDs are permanent slugs.
  */
 
+import type React from 'react';
+import AvatarIcon from '../components/icons/roles/AvatarIcon';
+import CopywriterIcon from '../components/icons/roles/CopywriterIcon';
+import CreatorIcon from '../components/icons/roles/CreatorIcon';
+import DirectorIcon from '../components/icons/roles/DirectorIcon';
+import ChatbotIcon from '../components/icons/roles/ChatbotIcon';
+import MarketplaceIcon from '../components/icons/roles/MarketplaceIcon';
+import DesignerIcon from '../components/icons/roles/DesignerIcon';
+import VideoMakerIcon from '../components/icons/roles/VideoMakerIcon';
+import AnimatorIcon from '../components/icons/roles/AnimatorIcon';
+import ContentManagerIcon from '../components/icons/roles/ContentManagerIcon';
+import WebsiteIcon from '../components/icons/roles/WebsiteIcon';
+import MarketerIcon from '../components/icons/roles/MarketerIcon';
+import MusicProducerIcon from '../components/icons/roles/MusicProducerIcon';
+
 export type Localized<T = string> = { en: T; ru: T };
 
 export type SkillName =
@@ -46,8 +61,8 @@ export type AccentName = 'amber' | 'iris' | 'neon' | 'lime';
 export type Role = {
   /** kebab-case, stable slug */
   id: string;
-  /** lucide-react icon name */
-  iconName: string;
+  /** Custom SVG role icon — inherits color via currentColor. */
+  icon: React.ComponentType<{ size?: number; className?: string }>;
   /** 2-stop hex gradient used on the role card */
   gradient: [string, string];
   accent: AccentName;
@@ -77,7 +92,7 @@ const LIME = '#c4f061';
 export const ROLES: Role[] = [
   {
     id: 'ai-avatar-specialist',
-    iconName: 'UserCircle2',
+    icon: AvatarIcon,
     gradient: [AMBER, IRIS],
     accent: 'amber',
     name: { en: 'AI Avatar Specialist', ru: 'Специалист по AI-аватарам' },
@@ -176,7 +191,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-copywriter',
-    iconName: 'PenLine',
+    icon: CopywriterIcon,
     gradient: [IRIS, NEON],
     accent: 'iris',
     name: { en: 'AI Copywriter', ru: 'AI-копирайтер' },
@@ -272,7 +287,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-creator',
-    iconName: 'Zap',
+    icon: CreatorIcon,
     gradient: [AMBER, LIME],
     accent: 'amber',
     name: { en: 'AI Creator', ru: 'AI-креатор' },
@@ -368,7 +383,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-director',
-    iconName: 'Clapperboard',
+    icon: DirectorIcon,
     gradient: [AMBER, IRIS],
     accent: 'amber',
     name: { en: 'AI Director', ru: 'AI-режиссёр' },
@@ -464,7 +479,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-chatbot-specialist',
-    iconName: 'MessageCircle',
+    icon: ChatbotIcon,
     gradient: [IRIS, NEON],
     accent: 'iris',
     name: { en: 'AI Chatbot Specialist', ru: 'Специалист по чат-ботам' },
@@ -560,7 +575,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-marketplace-manager',
-    iconName: 'Store',
+    icon: MarketplaceIcon,
     gradient: [NEON, LIME],
     accent: 'neon',
     name: { en: 'AI Marketplace Manager', ru: 'Менеджер маркетплейсов с AI' },
@@ -656,7 +671,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-designer',
-    iconName: 'Palette',
+    icon: DesignerIcon,
     gradient: [LIME, IRIS],
     accent: 'lime',
     name: { en: 'AI Designer', ru: 'AI-дизайнер' },
@@ -752,7 +767,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-video-maker',
-    iconName: 'Film',
+    icon: VideoMakerIcon,
     gradient: [NEON, IRIS],
     accent: 'neon',
     name: { en: 'AI Video Maker', ru: 'AI-видеомейкер' },
@@ -848,7 +863,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-animator',
-    iconName: 'Waves',
+    icon: AnimatorIcon,
     gradient: [NEON, AMBER],
     accent: 'neon',
     name: { en: 'AI Animator', ru: 'AI-аниматор' },
@@ -944,7 +959,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-content-manager',
-    iconName: 'CalendarDays',
+    icon: ContentManagerIcon,
     gradient: [LIME, NEON],
     accent: 'lime',
     name: { en: 'AI Content Manager', ru: 'AI-контент-менеджер' },
@@ -1040,7 +1055,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-website-specialist',
-    iconName: 'AppWindow',
+    icon: WebsiteIcon,
     gradient: [IRIS, AMBER],
     accent: 'iris',
     name: { en: 'AI Website Specialist', ru: 'Специалист по AI-сайтам' },
@@ -1136,7 +1151,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-marketer',
-    iconName: 'TrendingUp',
+    icon: MarketerIcon,
     gradient: [LIME, AMBER],
     accent: 'lime',
     name: { en: 'AI Marketer', ru: 'AI-маркетолог' },
@@ -1232,7 +1247,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-music-producer',
-    iconName: 'AudioLines',
+    icon: MusicProducerIcon,
     gradient: [IRIS, LIME],
     accent: 'lime',
     name: { en: 'AI Music Producer', ru: 'AI-музыкальный продюсер' },

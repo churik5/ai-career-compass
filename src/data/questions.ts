@@ -159,8 +159,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'few-retainers',
         label: {
-          en: 'A few clients on retainer — a few regular clients to manage.',
-          ru: 'Несколько клиентов на ретейнере — несколько постоянных клиентов на ведении.',
+          en: 'A few regular clients to manage.',
+          ru: 'Несколько постоянных клиентов на ведении.',
         },
         weights: {
           'ai-content-manager': 3,

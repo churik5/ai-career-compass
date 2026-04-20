@@ -7,7 +7,6 @@ import { Eyebrow } from '../components/Eyebrow';
 import { Orb } from '../components/Orb';
 import { PageShell } from '../components/PageShell';
 import { Stagger } from '../components/Stagger';
-import { Icon } from '../lib/icon';
 import { ROLES, type AccentName } from '../data/roles';
 import { useI18n, useLocale } from '../lib/i18n';
 import { cn } from '../lib/cn';
@@ -75,7 +74,7 @@ function FloatingGlyphs() {
               ease: [0.2, 0.8, 0.2, 1],
             }}
           >
-            <Icon name={role.iconName} size={Math.round(pos.size * 0.45)} strokeWidth={1.4} />
+            <role.icon size={Math.round(pos.size * 0.45)} />
           </motion.div>
         );
       })}
@@ -185,7 +184,7 @@ export default function Landing() {
                   )}
                 >
                   <span className={cn('inline-flex', ACCENT_TEXT[role.accent])}>
-                    <Icon name={role.iconName} size={16} strokeWidth={1.6} />
+                    <role.icon size={16} />
                   </span>
                   <span className="text-sm text-bone-100 group-hover:text-bone-50 transition-colors">
                     {pick(role.name)}
