@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "title": "AI Career Compass",
+    "tagline": "For creators, freelancers and beginners"
+  },
+  "nav": {
+    "brand": "AI Career Compass",
+    "brandMark": "ACC",
+    "home": "Home"
+  },
+  "common": {
+    "next": "Next",
+    "back": "Back",
+    "start": "Start",
+    "retake": "Retake the quiz",
+    "share": "Share",
+    "shareResult": "Share my result",
+    "continue": "Continue",
+    "reveal": "Reveal",
+    "loading": "Loading",
+    "error": "Something went wrong"
+  },
+  "language": {
+    "toggle": "Toggle language",
+    "en": "EN",
+    "ru": "RU"
+  },
+  "footer": {
+    "madeWith": "Crafted as a gift",
+    "copyright": "© 2026 AI Career Compass"
+  },
+  "landing": {
+    "eyebrow": "Career Compass · 2026",
+    "titleA": "Find your place in",
+    "titleAccent": "the new AI economy",
+    "titleItalic": "creator",
+    "lede": "Twelve short questions. Thirteen AI-native professions. One role that reads like a letter written for you — with a dashboard you can actually use on Monday.",
+    "cta": "Start the quiz",
+    "stats": "13 roles · 12 questions · ≈2 min",
+    "rolesChipLabel": "The 13 roles",
+    "howTitle": "How it works",
+    "step1Title": "Answer 12 questions",
+    "step1Body": "No résumé, no logins. Just taste, pace, and how you actually like to work.",
+    "step2Title": "Meet your top match",
+    "step2Body": "An AI-native profession that fits your shape, with runners-up worth a second look.",
+    "step3Title": "Unlock your dashboard",
+    "step3Body": "Skills, services, real pricing, monthly income, and where to start this week."
+  },
+  "quiz": {
+    "eyebrow": "The Quiz",
+    "progress": "Question {current} of {total}",
+    "progressShort": "{current} / {total}",
+    "next": "Next",
+    "back": "Back",
+    "backHome": "Back to home",
+    "finish": "See my result",
+    "chooseOne": "Pick the option that fits best — you can change it later.",
+    "hintFallback": "One pick, honest, no wrong answers."
+  },
+  "result": {
+    "eyebrow": "Your match",
+    "matchPill": "{percent}% match",
+    "alsoExplore": "Also worth exploring",
+    "continue": "Guess the income",
+    "retake": "Retake the quiz",
+    "rankLabel": "Rank {rank}"
+  },
+  "salaryGuess": {
+    "eyebrow": "The big question",
+    "prompt": "How much does an {role} actually earn per month?",
+    "caption": "Your best guess — we will put it next to the real range.",
+    "placeholder": "0",
+    "submit": "Reveal",
+    "yourGuess": "Your guess",
+    "actualRange": "Actual range",
+    "off": "off by {percent}%",
+    "perfect": "spot on",
+    "reactionInside": "You feel the market.",
+    "reactionClose": "Within arm's reach — you almost landed it.",
+    "reactionUndershot": "You underestimated the AI market 📈",
+    "reactionOvershot": "Not Sam Altman yet, but soon 😄",
+    "continue": "See the dashboard",
+    "again": "Guess again",
+    "rangeMinLabel": "min",
+    "rangeMaxLabel": "max",
+    "rangeMidLabel": "mid",
+    "currencyPrefix": "$",
+    "perMonth": "/ month"
+  },
+  "dashboard": {
+    "eyebrow": "Your dashboard",
+    "coreSkills": "Core skills",
+    "whatTheyDo": "What they actually do",
+    "servicesPricing": "Services & pricing",
+    "servicesUnit": "USD · per unit",
+    "whereToStart": "Where to start",
+    "share": "Share my result",
+    "shareMessage": "I was matched as an {role} on AI Career Compass. Try it:",
+    "copied": "Copied to clipboard",
+    "monthlyIncome": "Estimated monthly",
+    "monthlyIncomeRange": "${min} – ${max}",
+    "retake": "Retake the quiz",
+    "priceRange": "${min} – ${max}",
+    "pricePerUnit": "${min} – ${max} / {unit}",
+    "chartTitle": "Range per service",
+    "chartAxis": "USD",
+    "matchLabel": "{percent}% match"
+  },
+  "skills": {
+    "creativity": "Creativity",
+    "visualTaste": "Visual taste",
+    "techSkills": "Tech fluency",
+    "communication": "Communication",
+    "speed": "Speed",
+    "analytics": "Analytics",
+    "storytelling": "Storytelling",
+    "systemThinking": "Systems thinking",
+    "curation": "Curation"
+  }
+}

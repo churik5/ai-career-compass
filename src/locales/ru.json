@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "title": "AI Career Compass",
+    "tagline": "Для креаторов, фрилансеров и тех, кто только начинает"
+  },
+  "nav": {
+    "brand": "AI Career Compass",
+    "brandMark": "ACC",
+    "home": "Главная"
+  },
+  "common": {
+    "next": "Дальше",
+    "back": "Назад",
+    "start": "Начать",
+    "retake": "Пройти заново",
+    "share": "Поделиться",
+    "shareResult": "Поделиться результатом",
+    "continue": "Продолжить",
+    "reveal": "Показать",
+    "loading": "Загружаем",
+    "error": "Что-то пошло не так"
+  },
+  "language": {
+    "toggle": "Сменить язык",
+    "en": "EN",
+    "ru": "RU"
+  },
+  "footer": {
+    "madeWith": "Сделано как подарок",
+    "copyright": "© 2026 AI Career Compass"
+  },
+  "landing": {
+    "eyebrow": "Career Compass · 2026",
+    "titleA": "Найдите своё место в",
+    "titleAccent": "новой AI-экономике",
+    "titleItalic": "креатора",
+    "lede": "Двенадцать коротких вопросов. Тринадцать AI-профессий. Одна роль, описанная как письмо лично вам — и дашборд, которым можно пользоваться уже в понедельник.",
+    "cta": "Начать тест",
+    "stats": "13 ролей · 12 вопросов · ≈2 мин",
+    "rolesChipLabel": "13 ролей",
+    "howTitle": "Как это работает",
+    "step1Title": "Ответьте на 12 вопросов",
+    "step1Body": "Без резюме и логинов. Только вкус, темп и то, как вам по-настоящему нравится работать.",
+    "step2Title": "Познакомьтесь со своей ролью",
+    "step2Body": "AI-профессия, которая сядет по фигуре, плюс пара запасных вариантов, на которые стоит взглянуть.",
+    "step3Title": "Откройте свой дашборд",
+    "step3Body": "Навыки, услуги, реальные цены, месячный доход и с чего начать уже на этой неделе."
+  },
+  "quiz": {
+    "eyebrow": "Тест",
+    "progress": "Вопрос {current} из {total}",
+    "progressShort": "{current} / {total}",
+    "next": "Дальше",
+    "back": "Назад",
+    "backHome": "На главную",
+    "finish": "Показать результат",
+    "chooseOne": "Выберите вариант, который ближе всего — потом можно будет передумать.",
+    "hintFallback": "Один выбор, честно, неправильных ответов нет."
+  },
+  "result": {
+    "eyebrow": "Ваш матч",
+    "matchPill": "{percent}% совпадение",
+    "alsoExplore": "Тоже стоит посмотреть",
+    "continue": "Угадайте доход",
+    "retake": "Пройти заново",
+    "rankLabel": "Место {rank}"
+  },
+  "salaryGuess": {
+    "eyebrow": "Главный вопрос",
+    "prompt": "Сколько на самом деле зарабатывает {role} в месяц?",
+    "caption": "Ваша догадка — поставим её рядом с реальной вилкой.",
+    "placeholder": "0",
+    "submit": "Показать",
+    "yourGuess": "Ваша догадка",
+    "actualRange": "Реальный диапазон",
+    "off": "мимо на {percent}%",
+    "perfect": "в точку",
+    "reactionInside": "Вы чувствуете рынок.",
+    "reactionClose": "Почти попали — рукой подать.",
+    "reactionUndershot": "Вы недооценили AI-рынок 📈",
+    "reactionOvershot": "Ещё не Сэм Альтман, но скоро 😄",
+    "continue": "К дашборду",
+    "again": "Угадать ещё раз",
+    "rangeMinLabel": "мин",
+    "rangeMaxLabel": "макс",
+    "rangeMidLabel": "средн",
+    "currencyPrefix": "$",
+    "perMonth": "/ мес."
+  },
+  "dashboard": {
+    "eyebrow": "Ваш дашборд",
+    "coreSkills": "Ключевые навыки",
+    "whatTheyDo": "Чем они занимаются на самом деле",
+    "servicesPricing": "Услуги и цены",
+    "servicesUnit": "USD · за единицу",
+    "whereToStart": "С чего начать",
+    "share": "Поделиться результатом",
+    "shareMessage": "Мне выпала роль {role} в AI Career Compass. Попробуйте и вы:",
+    "copied": "Скопировано",
+    "monthlyIncome": "Примерно в месяц",
+    "monthlyIncomeRange": "${min} – ${max}",
+    "retake": "Пройти заново",
+    "priceRange": "${min} – ${max}",
+    "pricePerUnit": "${min} – ${max} / {unit}",
+    "chartTitle": "Вилка по услугам",
+    "chartAxis": "USD",
+    "matchLabel": "{percent}% совпадение"
+  },
+  "skills": {
+    "creativity": "Креативность",
+    "visualTaste": "Визуальный вкус",
+    "techSkills": "Техническая хватка",
+    "communication": "Коммуникация",
+    "speed": "Скорость",
+    "analytics": "Аналитика",
+    "storytelling": "Сторителлинг",
+    "systemThinking": "Системное мышление",
+    "curation": "Кураторство"
+  }
+}
