@@ -81,7 +81,7 @@ export default function Result() {
               className={cn(
                 'grid place-items-center',
                 'w-20 h-20 sm:w-24 sm:h-24 rounded-3xl',
-                'glass-strong lumen',
+                'bg-ink-900/90 border border-ink-600 lumen',
                 ACCENT_TEXT[top.role.accent],
                 ACCENT_GLOW[top.role.accent],
               )}

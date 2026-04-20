@@ -178,12 +178,12 @@ export default function Dashboard() {
           <Card
             variant="glass-strong"
             padding="none"
-            className="relative overflow-hidden rounded-[2rem]"
+            className="relative overflow-hidden rounded-[2rem] bg-ink-900/95"
           >
             {/* Gradient ribbon */}
             <div
               aria-hidden="true"
-              className="absolute inset-0 opacity-[0.22]"
+              className="absolute inset-0 opacity-[0.15]"
               style={{
                 background: `radial-gradient(120% 80% at 85% 10%, ${topRole.gradient[0]}44, transparent 55%), radial-gradient(100% 80% at 10% 90%, ${topRole.gradient[1]}33, transparent 60%)`,
               }}
@@ -202,7 +202,7 @@ export default function Dashboard() {
                     aria-hidden="true"
                     className={cn(
                       'grid place-items-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl',
-                      'glass lumen',
+                      'bg-ink-900/90 border border-ink-600 lumen',
                       ACCENT_TEXT[topRole.accent],
                     )}
                   >

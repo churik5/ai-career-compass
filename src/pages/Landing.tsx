@@ -243,6 +243,7 @@ export default function Landing() {
               <Eyebrow>{t('landing.eyebrow')}</Eyebrow>
               <p className="font-display text-2xl sm:text-3xl text-bone-50 text-balance">
                 {t('landing.titleA')}{' '}
+                <em className="italic font-normal">{t('landing.titleItalic')}</em>{' '}
                 <span className="text-amber">{t('landing.titleAccent')}</span>.
               </p>
             </div>

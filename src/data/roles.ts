@@ -176,7 +176,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-copywriter',
-    iconName: 'PenTool',
+    iconName: 'PenLine',
     gradient: [IRIS, NEON],
     accent: 'iris',
     name: { en: 'AI Copywriter', ru: 'AI-копирайтер' },
@@ -272,7 +272,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-creator',
-    iconName: 'Clapperboard',
+    iconName: 'Zap',
     gradient: [AMBER, LIME],
     accent: 'amber',
     name: { en: 'AI Creator', ru: 'AI-креатор' },
@@ -368,7 +368,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-director',
-    iconName: 'Film',
+    iconName: 'Clapperboard',
     gradient: [AMBER, IRIS],
     accent: 'amber',
     name: { en: 'AI Director', ru: 'AI-режиссёр' },
@@ -464,7 +464,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-chatbot-specialist',
-    iconName: 'Bot',
+    iconName: 'MessageCircle',
     gradient: [IRIS, NEON],
     accent: 'iris',
     name: { en: 'AI Chatbot Specialist', ru: 'Специалист по чат-ботам' },
@@ -560,7 +560,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-marketplace-manager',
-    iconName: 'ShoppingBag',
+    iconName: 'Store',
     gradient: [NEON, LIME],
     accent: 'neon',
     name: { en: 'AI Marketplace Manager', ru: 'Менеджер маркетплейсов с AI' },
@@ -752,7 +752,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-video-maker',
-    iconName: 'Video',
+    iconName: 'Film',
     gradient: [NEON, IRIS],
     accent: 'neon',
     name: { en: 'AI Video Maker', ru: 'AI-видеомейкер' },
@@ -848,7 +848,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-animator',
-    iconName: 'Wand2',
+    iconName: 'Waves',
     gradient: [NEON, AMBER],
     accent: 'neon',
     name: { en: 'AI Animator', ru: 'AI-аниматор' },
@@ -944,7 +944,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-content-manager',
-    iconName: 'Megaphone',
+    iconName: 'CalendarDays',
     gradient: [LIME, NEON],
     accent: 'lime',
     name: { en: 'AI Content Manager', ru: 'AI-контент-менеджер' },
@@ -1040,7 +1040,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-website-specialist',
-    iconName: 'Globe',
+    iconName: 'AppWindow',
     gradient: [IRIS, AMBER],
     accent: 'iris',
     name: { en: 'AI Website Specialist', ru: 'Специалист по AI-сайтам' },
@@ -1136,7 +1136,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-marketer',
-    iconName: 'Target',
+    iconName: 'TrendingUp',
     gradient: [LIME, AMBER],
     accent: 'lime',
     name: { en: 'AI Marketer', ru: 'AI-маркетолог' },
@@ -1232,7 +1232,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'ai-music-producer',
-    iconName: 'Music4',
+    iconName: 'AudioLines',
     gradient: [IRIS, LIME],
     accent: 'lime',
     name: { en: 'AI Music Producer', ru: 'AI-музыкальный продюсер' },

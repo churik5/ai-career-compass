@@ -1,7 +1,6 @@
 /**
- * The 12-question quiz. Each option carries weights pointing at specific
- * role IDs (see `src/data/roles.ts`). English copy is the source of truth;
- * Russian fields are empty strings — the Translator agent fills them later.
+ * The 10-question quiz. Each option carries weights pointing at specific
+ * role IDs (see `src/data/roles.ts`). Both EN and RU copy are authored.
  */
 
 export type Localized = { en: string; ru: string };
@@ -86,8 +85,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'pure-ideas',
         label: {
-          en: 'Ideas and direction — I see the angle and I brief the team.',
-          ru: 'Идеи и режиссура — я вижу угол подачи и брифую команду.',
+          en: 'Ideas and direction — I see in my head how it should look.',
+          ru: 'Идеи и режиссура — я вижу в голове, как это должно выглядеть.',
         },
         weights: {
           'ai-director': 3,
@@ -98,8 +97,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'idea-execution-mix',
         label: {
-          en: 'Both — I come up with it and I ship it.',
-          ru: 'И то, и другое — я придумываю и сам же выкатываю.',
+          en: 'Both — I both come up with ideas and make them.',
+          ru: 'И то, и другое — я и придумываю, и реализовываю.',
         },
         weights: {
           'ai-creator': 3,
@@ -111,8 +110,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'craft-first',
         label: {
-          en: 'Craft — give me the brief, I will make it beautiful.',
-          ru: 'Ремесло — дайте бриф, а дальше я сделаю красиво.',
+          en: "Craft — I don't like thinking too much — I need a clear task: what and how.",
+          ru: 'Ремесло — не люблю думать, мне нужна чёткая задача, что и как делать.',
         },
         weights: {
           'ai-designer': 3,
@@ -124,8 +123,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'delivery-systems',
         label: {
-          en: 'Systems — turning a mess into something that ships weekly.',
-          ru: 'Системы — превращаю хаос во что-то, что выходит каждую неделю.',
+          en: 'Systems — I turn chaos into a system.',
+          ru: 'Системы — превращаю хаос в систему.',
         },
         weights: {
           'ai-content-manager': 3,
@@ -146,8 +145,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'many-clients',
         label: {
-          en: 'Many small clients — quick jobs, clear scope, fast turnaround.',
-          ru: 'Много мелких клиентов — быстрые задачи, чёткий скоуп, короткий цикл.',
+          en: 'Many small clients — short tasks, do it and forget.',
+          ru: 'Много мелких клиентов — короткие задачи, сделал и забыл.',
         },
         weights: {
           'ai-designer': 2,
@@ -160,8 +159,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'few-retainers',
         label: {
-          en: 'A few clients on retainer — know the brand, run the feed.',
-          ru: 'Несколько клиентов на ретейнере — знать бренд, вести ленту.',
+          en: 'A few clients on retainer — a few regular clients to manage.',
+          ru: 'Несколько клиентов на ретейнере — несколько постоянных клиентов на ведении.',
         },
         weights: {
           'ai-content-manager': 3,
@@ -173,8 +172,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'project-based',
         label: {
-          en: 'Big projects — scoped, defined, delivered, next.',
-          ru: 'Крупные проекты — скоуп, сроки, сдача, следующий.',
+          en: 'Big projects — big responsibility, but also one-off projects.',
+          ru: 'Крупные проекты — большая зона ответственности, но также разовые проекты.',
         },
         weights: {
           'ai-director': 3,
@@ -186,8 +185,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'own-projects',
         label: {
-          en: 'My own stuff — I would rather build an audience than invoice.',
-          ru: 'Свой проект — лучше растить аудиторию, чем выставлять счета.',
+          en: 'My own stuff — I want to grow my social media and build a brand.',
+          ru: 'Свой проект — хочу развивать свои соцсети и создавать бренд.',
         },
         weights: {
           'ai-creator': 3,
@@ -383,62 +382,65 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 'engagement-length',
+    id: 'favorite-phase',
     prompt: {
-      en: 'What kind of engagement sounds like fun and not a trap?',
-      ru: 'Какой формат сотрудничества кажется интересным, а не ловушкой?',
+      en: 'Which part of the work energizes you most?',
+      ru: 'Какая часть работы заряжает вас сильнее всего?',
     },
     options: [
       {
-        id: 'one-off',
+        id: 'idea-moment',
         label: {
-          en: 'One-offs — in, done, invoice, next.',
-          ru: 'Разовые заказы — зашёл, сделал, выставил счёт, дальше.',
-        },
-        weights: {
-          'ai-designer': 2,
-          'ai-animator': 2,
-          'ai-music-producer': 2,
-          'ai-copywriter': 1,
-        },
-      },
-      {
-        id: 'short-projects',
-        label: {
-          en: 'Short projects with a clear goal and a launch date.',
-          ru: 'Короткие проекты с чёткой целью и датой запуска.',
+          en: 'The idea — when it all clicks in my head.',
+          ru: 'Идея — когда всё складывается в голове.',
         },
         weights: {
           'ai-director': 3,
-          'ai-video-maker': 2,
-          'ai-avatar-specialist': 2,
-          'ai-website-specialist': 2,
+          'ai-creator': 2,
+          'ai-marketer': 2,
+          'ai-copywriter': 1,
         },
       },
       {
-        id: 'retainers',
+        id: 'making-phase',
         label: {
-          en: 'Monthly retainers — same client, growing work.',
-          ru: 'Месячные ретейнеры — тот же клиент, объём работы растёт.',
+          en: 'The making — hands-on, quiet, in flow.',
+          ru: 'Создание — руками, тихо, в потоке.',
         },
         weights: {
-          'ai-content-manager': 3,
-          'ai-marketer': 3,
-          'ai-marketplace-manager': 2,
-          'ai-chatbot-specialist': 2,
+          'ai-designer': 3,
+          'ai-video-maker': 2,
+          'ai-music-producer': 2,
+          'ai-animator': 2,
+          'ai-copywriter': 1,
         },
       },
       {
-        id: 'own-brand',
+        id: 'launch-moment',
         label: {
-          en: 'Running my own thing — a channel, a product, a small shop.',
-          ru: 'Своё дело — канал, продукт, маленький магазин.',
+          en: 'The launch — hitting publish and watching the reaction.',
+          ru: 'Запуск — нажал publish и смотришь на реакцию.',
         },
         weights: {
           'ai-creator': 3,
-          'ai-music-producer': 2,
-          'ai-copywriter': 1,
-          'ai-designer': 1,
+          'ai-content-manager': 2,
+          'ai-marketplace-manager': 2,
+          'ai-avatar-specialist': 1,
+          'ai-marketer': 1,
+        },
+      },
+      {
+        id: 'measurement-phase',
+        label: {
+          en: 'The numbers — seeing what actually worked.',
+          ru: 'Цифры — видишь, что реально сработало.',
+        },
+        weights: {
+          'ai-marketer': 3,
+          'ai-marketplace-manager': 3,
+          'ai-chatbot-specialist': 2,
+          'ai-content-manager': 2,
+          'ai-website-specialist': 1,
         },
       },
     ],
@@ -453,8 +455,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'voice',
         label: {
-          en: 'Rewrite a weak piece of copy until it sings.',
-          ru: 'Переписать слабый текст до тех пор, пока он не зазвучит.',
+          en: 'Write a nice text/post.',
+          ru: 'Написать красивый текст/пост.',
         },
         weights: {
           'ai-copywriter': 3,
@@ -466,8 +468,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'visual',
         label: {
-          en: 'Design a poster, a thumbnail, a visual pack.',
-          ru: 'Сверстать постер, превью, визуальный пак.',
+          en: 'Design a banner or image.',
+          ru: 'Сделать дизайн баннера, картинки.',
         },
         weights: {
           'ai-designer': 3,
@@ -492,73 +494,11 @@ export const QUESTIONS: Question[] = [
       {
         id: 'sound',
         label: {
-          en: 'Build a short track or a jingle someone can ship as an ad.',
-          ru: 'Собрать короткий трек или джингл, который можно пустить в рекламу.',
+          en: 'Write a cool song.',
+          ru: 'Написать интересную песню.',
         },
         weights: {
           'ai-music-producer': 3,
-        },
-      },
-    ],
-  },
-  {
-    id: 'planning-style',
-    prompt: {
-      en: 'How do you handle a blank week and five deliverables?',
-      ru: 'Как вы заходите в пустую неделю с пятью задачами?',
-    },
-    options: [
-      {
-        id: 'calendar-first',
-        label: {
-          en: 'Calendar first — slots, checklists, a clean Monday.',
-          ru: 'Сначала календарь — слоты, чек-листы, чистый понедельник.',
-        },
-        weights: {
-          'ai-content-manager': 3,
-          'ai-marketer': 2,
-          'ai-marketplace-manager': 2,
-          'ai-website-specialist': 1,
-        },
-      },
-      {
-        id: 'priorities-first',
-        label: {
-          en: 'Two priorities, everything else negotiable.',
-          ru: 'Два приоритета — всё остальное обсуждаемо.',
-        },
-        weights: {
-          'ai-director': 3,
-          'ai-chatbot-specialist': 2,
-          'ai-avatar-specialist': 1,
-          'ai-website-specialist': 1,
-        },
-      },
-      {
-        id: 'batch-mode',
-        label: {
-          en: 'Batch it — three deep sessions, done.',
-          ru: 'Батчами — три глубоких захода и всё.',
-        },
-        weights: {
-          'ai-designer': 2,
-          'ai-video-maker': 2,
-          'ai-music-producer': 2,
-          'ai-animator': 2,
-          'ai-copywriter': 1,
-        },
-      },
-      {
-        id: 'spark-first',
-        label: {
-          en: 'Follow the spark — I do my best work when I am in it.',
-          ru: 'За искрой — лучше всего работаю, когда меня несёт.',
-        },
-        weights: {
-          'ai-creator': 3,
-          'ai-copywriter': 1,
-          'ai-director': 1,
-          'ai-music-producer': 1,
         },
       },
     ],
@@ -573,8 +513,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'on-camera',
         label: {
-          en: 'Facing the audience — I want my own feed.',
-          ru: 'Лицом к аудитории — хочу свою ленту.',
+          en: 'Facing the audience — I want to be public.',
+          ru: 'Лицом к аудитории — хочу быть публичным.',
         },
         weights: {
           'ai-creator': 3,
@@ -585,8 +525,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'voice-of',
         label: {
-          en: 'Voice behind the brand — I shape it, they take the credit.',
-          ru: 'Голос за брендом — я придаю ему форму, лавры достаются им.',
+          en: 'I want the brand to credit me as the specialist.',
+          ru: 'Хочу, чтобы бренд указывал меня как специалиста.',
         },
         weights: {
           'ai-copywriter': 3,
@@ -598,8 +538,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'behind-scenes-build',
         label: {
-          en: 'Behind the scenes — I build the thing, you ship it.',
-          ru: 'За кулисами — я собираю, вы выкатываете.',
+          en: 'Behind the scenes — I make it, the brand uses it.',
+          ru: 'За кулисами — я делаю, бренд использует.',
         },
         weights: {
           'ai-chatbot-specialist': 3,
@@ -611,8 +551,8 @@ export const QUESTIONS: Question[] = [
       {
         id: 'deliver-and-done',
         label: {
-          en: 'Deliver the file and log off — the client handles the posting.',
-          ru: 'Сдать файл и выйти из чата — пусть клиент сам постит.',
+          en: 'Hand over the finished work and forget about it.',
+          ru: 'Отдать готовую работу и забыть про неё.',
         },
         weights: {
           'ai-designer': 2,
@@ -682,69 +622,6 @@ export const QUESTIONS: Question[] = [
           'ai-director': 2,
           'ai-copywriter': 2,
           'ai-music-producer': 1,
-        },
-      },
-    ],
-  },
-  {
-    id: 'prompting-comfort',
-    prompt: {
-      en: 'How comfortable are you jumping between ten AI tools in a day?',
-      ru: 'Насколько легко вам прыгать между десятью AI-инструментами за день?',
-    },
-    options: [
-      {
-        id: 'native',
-        label: {
-          en: 'Native — I try the new one the day it drops.',
-          ru: 'Как рыба в воде — новый инструмент пробую в день релиза.',
-        },
-        weights: {
-          'ai-video-maker': 3,
-          'ai-avatar-specialist': 2,
-          'ai-animator': 2,
-          'ai-music-producer': 2,
-          'ai-chatbot-specialist': 1,
-        },
-      },
-      {
-        id: 'confident',
-        label: {
-          en: 'Confident — give me an afternoon and I will have it figured.',
-          ru: 'Уверенно — дайте полдня, и я разберусь.',
-        },
-        weights: {
-          'ai-designer': 2,
-          'ai-website-specialist': 2,
-          'ai-marketplace-manager': 2,
-          'ai-creator': 2,
-          'ai-marketer': 1,
-        },
-      },
-      {
-        id: 'prefer-few',
-        label: {
-          en: 'Prefer to go deep in two or three tools I actually know.',
-          ru: 'Предпочитаю копать вглубь в двух-трёх инструментах, которые знаю.',
-        },
-        weights: {
-          'ai-director': 2,
-          'ai-copywriter': 3,
-          'ai-content-manager': 2,
-          'ai-marketer': 2,
-        },
-      },
-      {
-        id: 'tools-as-means',
-        label: {
-          en: 'Tools are a means — the idea is the thing.',
-          ru: 'Инструменты — всего лишь средство, главное — идея.',
-        },
-        weights: {
-          'ai-director': 2,
-          'ai-creator': 1,
-          'ai-copywriter': 1,
-          'ai-marketer': 1,
         },
       },
     ],
