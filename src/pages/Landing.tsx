@@ -124,8 +124,15 @@ export default function Landing() {
 
             <h1 className="font-display text-display-xl text-bone-50 text-balance tracking-tight">
               <span className="block">
-                {t('landing.titleA')}{' '}
-                <em className="italic text-bone-100 font-normal">{t('landing.titleItalic')}</em>
+                {t('landing.titleA')}
+                {t('landing.titleItalic') ? (
+                  <>
+                    {' '}
+                    <em className="italic text-bone-100 font-normal">
+                      {t('landing.titleItalic')}
+                    </em>
+                  </>
+                ) : null}
               </span>
               <span className="relative inline-block">
                 <span className="relative z-10">{t('landing.titleAccent')}</span>
@@ -241,9 +248,14 @@ export default function Landing() {
             <div className="flex flex-col gap-3 max-w-lg">
               <Eyebrow>{t('landing.eyebrow')}</Eyebrow>
               <p className="font-display text-2xl sm:text-3xl text-bone-50 text-balance">
-                {t('landing.titleA')}{' '}
-                <em className="italic font-normal">{t('landing.titleItalic')}</em>{' '}
-                <span className="text-amber">{t('landing.titleAccent')}</span>.
+                {t('landing.titleA')}
+                {t('landing.titleItalic') ? (
+                  <>
+                    {' '}
+                    <em className="italic font-normal">{t('landing.titleItalic')}</em>
+                  </>
+                ) : null}{' '}
+                <span className="text-amber">{t('landing.titleAccent')}</span>
               </p>
             </div>
             <Button

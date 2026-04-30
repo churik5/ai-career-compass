@@ -6,9 +6,11 @@ import {
   useReducer,
   type ReactNode,
 } from 'react';
-import { QUESTIONS } from '../data/questions';
-import { ROLES } from '../data/roles';
-import { guessDelta, scoreAnswers, type GuessDelta, type RoleResult } from './scoring';
+import { ROLES, ROLES_BY_ID } from '../data/roles';
+import type { GoalId, ContextId } from '../data/questions';
+import { guessDelta, type GuessDelta, type RoleResult } from './scoring';
+
+const TARGET_ROLE_ID = 'ai-content-manager';
 
 export type QuizAnswer = {
   questionId: string;
@@ -17,6 +19,8 @@ export type QuizAnswer = {
 
 export interface QuizState {
   answers: QuizAnswer[];
+  goal: GoalId | null;
+  context: ContextId | null;
   results: RoleResult[] | null;
   topRoleId: string | null;
   guess: number | null;
@@ -31,11 +35,23 @@ type Action =
 
 const initialState: QuizState = {
   answers: [],
+  goal: null,
+  context: null,
   results: null,
   topRoleId: null,
   guess: null,
   guessDelta: null,
 };
+
+function buildResults(): RoleResult[] {
+  return ROLES.map((role, idx) => ({
+    roleId: role.id,
+    role,
+    score: role.id === TARGET_ROLE_ID ? 100 : 0,
+    percent: role.id === TARGET_ROLE_ID ? 100 : 0,
+    rank: role.id === TARGET_ROLE_ID ? 1 : idx + 2,
+  })).sort((a, b) => b.score - a.score);
+}
 
 function reducer(state: QuizState, action: Action): QuizState {
   switch (action.type) {
@@ -46,13 +62,24 @@ function reducer(state: QuizState, action: Action): QuizState {
       const nextAnswers =
         existingIdx >= 0
           ? state.answers.map((a, i) =>
-              i === existingIdx ? { questionId: action.questionId, optionId: action.optionId } : a,
+              i === existingIdx
+                ? { questionId: action.questionId, optionId: action.optionId }
+                : a,
             )
           : [...state.answers, { questionId: action.questionId, optionId: action.optionId }];
-      // Invalidate results / guess whenever answers change — they are now stale.
+
+      // Mirror goal/context for fast lookup downstream.
+      const nextGoal =
+        action.questionId === 'goal' ? (action.optionId as GoalId) : state.goal;
+      const nextContext =
+        action.questionId === 'context' ? (action.optionId as ContextId) : state.context;
+
       return {
         ...state,
         answers: nextAnswers,
+        goal: nextGoal,
+        context: nextContext,
+        // Invalidate downstream — answers changed.
         results: null,
         topRoleId: null,
         guess: null,
@@ -60,22 +87,17 @@ function reducer(state: QuizState, action: Action): QuizState {
       };
     }
     case 'finish': {
-      const results = scoreAnswers(state.answers, QUESTIONS, ROLES);
-      const topRoleId = results[0]?.roleId ?? null;
+      const results = buildResults();
       return {
         ...state,
         results,
-        topRoleId,
-        // When recomputing, clear any stale guess evaluation.
+        topRoleId: TARGET_ROLE_ID,
         guess: null,
         guessDelta: null,
       };
     }
     case 'setGuess': {
-      if (!state.topRoleId) {
-        return { ...state, guess: action.amount, guessDelta: null };
-      }
-      const topRole = ROLES.find((r) => r.id === state.topRoleId);
+      const topRole = state.topRoleId ? ROLES_BY_ID[state.topRoleId] : undefined;
       if (!topRole) {
         return { ...state, guess: action.amount, guessDelta: null };
       }

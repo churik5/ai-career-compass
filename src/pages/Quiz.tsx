@@ -57,7 +57,7 @@ export default function Quiz() {
       return;
     }
     finish();
-    navigate('/result');
+    navigate('/demo');
   }, [current, currentSelection, finish, navigate, total]);
 
   const handleBack = useCallback(() => {

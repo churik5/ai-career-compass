@@ -3,6 +3,8 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { QuizStateProvider } from './lib/quizState';
 import Landing from './pages/Landing';
 import Quiz from './pages/Quiz';
+import Demo from './pages/Demo';
+import Anticipation from './pages/Anticipation';
 import Result from './pages/Result';
 import SalaryGuess from './pages/SalaryGuess';
 import Dashboard from './pages/Dashboard';
@@ -23,6 +25,8 @@ function AnimatedRoutes() {
         <Routes location={location}>
           <Route path="/" element={<Landing />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/demo" element={<Demo />} />
+          <Route path="/anticipation" element={<Anticipation />} />
           <Route path="/result" element={<Result />} />
           <Route path="/salary" element={<SalaryGuess />} />
           <Route path="/dashboard" element={<Dashboard />} />

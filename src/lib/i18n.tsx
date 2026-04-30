@@ -46,7 +46,7 @@ function interpolate(str: string, vars: Record<string, string | number>): string
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>('en');
+  const [lang, setLang] = useState<Lang>('ru');
 
   const value = useMemo<I18nContextValue>(
     () => ({

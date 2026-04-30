@@ -53,9 +53,17 @@ export function scoreAnswers(
 
     seenQuestions.add(answer.questionId);
 
-    for (const [roleId, weightRaw] of Object.entries(option.weights)) {
-      if (typeof weightRaw !== 'number' || Number.isNaN(weightRaw)) continue;
-      scoreByRole.set(roleId, (scoreByRole.get(roleId) ?? 0) + weightRaw);
+    // The current quiz `Option` type carries no weights — the funnel always
+    // resolves to `ai-content-manager` upstream. We keep `scoreAnswers`
+    // around for older call sites that may still hand in option objects with
+    // a legacy `weights` field, so we read it defensively.
+    const legacyWeights = (option as { weights?: Record<string, unknown> })
+      .weights;
+    if (legacyWeights) {
+      for (const [roleId, weightRaw] of Object.entries(legacyWeights)) {
+        if (typeof weightRaw !== 'number' || Number.isNaN(weightRaw)) continue;
+        scoreByRole.set(roleId, (scoreByRole.get(roleId) ?? 0) + weightRaw);
+      }
     }
   }
 
